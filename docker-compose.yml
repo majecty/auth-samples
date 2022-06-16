@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  auth0:
+    build: auth0
+    platform: linux/amd64
+    ports:
+      - "3001:3000"
+      - "3002:3001"
+  all:
+    build: all
+    platform: linux/amd64
+    ports:
+      - "3000:3000"
+
+
