@@ -15,9 +15,18 @@
   "devDependencies": {
     "eslint": "^6.0.1",
     "eslint-plugin-promise": "^4.2.1",
-    "lerna": "^3.15.0"
+    "lerna": "^3.15.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.2"
   },
   "scripts": {
-    "test": "scripts/test.sh"
+    "test": "scripts/test.sh",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity": "^3.112.0",
+    "@aws-sdk/client-kms": "^3.112.0",
+    "@aws-sdk/credential-provider-cognito-identity": "^3.112.0"
   }
 }

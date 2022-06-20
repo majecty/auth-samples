@@ -8,3 +8,6 @@ docker compose로 띄울 수 있음
 ## firebase
 
 firebase deploy로 배포해야함
+배포한 url: https://borre-auth-test.web.app/
+
+개발할 땐 firebase serve
