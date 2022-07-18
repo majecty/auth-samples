@@ -54,7 +54,9 @@ limitations under the License.
     async function onSignIn() {
       const user = firebase.auth().currentUser.multiFactor.user;
       console.log(user);
-      const borre = new window.borre.BorreAWS(user.stsTokenManager.accessToken);
+      const idToken = await firebase.auth().currentUser.getIdToken(true);
+        console.log("idtoken", idToken);
+      const borre = new window.borre.BorreAWS(idToken);
       const result = await borre.encrypt("hi");
       console.log("encrypt result");
       console.log(result);

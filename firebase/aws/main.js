@@ -11,7 +11,6 @@ export class BorreAWS {
         console.log("before create kmsclient");
         const client = new CognitoIdentityClient({region});
         console.log("client is ", client);
-        console.log(accessToken);
 		this.kmsClient = new KMSClient({
             region,
             credentials: fromCognitoIdentityPool({
@@ -21,6 +20,7 @@ export class BorreAWS {
                 identityPoolId,
                 logins: { 
                     "securetoken.google.com/borre-auth-test": accessToken
+                    //"securetoken.google.com/borre-auth-test": accessToken
                 }
             })
         });
@@ -34,7 +34,7 @@ export class BorreAWS {
 		const text = new TextEncoder().encode(message);
 		const encryptCommand = new EncryptCommand({
 			KeyId: kmsKeyId,
-			PlainText: text
+			Plaintext: text
 		});
 		return this.kmsClient.send(encryptCommand);
 	}
